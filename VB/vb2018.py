@@ -76,6 +76,7 @@ def feladat9():
             varosok.append(adat.varos)
     print(f"9. feladat: {len(varosok)} különböző városban voltak mérkőzések.")
 
+
 def main():
     feladat1()
     feladat3()
