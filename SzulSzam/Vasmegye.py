@@ -8,6 +8,7 @@ class Szemelyi:
 
         self.szul_ev = ("19" if (nem == '1' or nem == '2') else "20")
         self.szul_ev += ev
+        self.szul_ev = int(self.szul_ev)
 
         self.honap: int = honap
         self.nap: int = nap
@@ -67,18 +68,18 @@ for adat in adatok:
         fiuk_count += 1
 print(f"6.feladat: Fiúk száma: {fiuk_count}")
 
-date_min = int(adatok[0].szul_ev)
-date_max = int(adatok[0].szul_ev)
+date_min = adatok[0].szul_ev
+date_max = adatok[0].szul_ev
 for adat in adatok:
-    if int(adat.szul_ev) < date_min:
-        date_min = int(adat.szul_ev)
-    if int(adat.szul_ev) > date_max:
-        date_max = int(adat.szul_ev)
+    if adat.szul_ev < date_min:
+        date_min = adat.szul_ev
+    if adat.szul_ev > date_max:
+        date_max = adat.szul_ev
 print(f"7. feladat: Vizsgált időszak: {date_min} - {date_max}")
 
 van_szokonapi = False
 for adat in adatok:
-    if int(adat.szul_ev) % 4 == 0:
+    if adat.szul_ev % 4 == 0:
         if adat.honap == 2 and adat.nap == 24:
             van_szokonapi = True
             break
